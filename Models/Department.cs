@@ -1,4 +1,7 @@
-﻿namespace SalesWebMVC.Models
+﻿using MessagePack;
+using Microsoft.Build.Framework;
+
+namespace SalesWebMVC.Models
 {
     public class Department
     {

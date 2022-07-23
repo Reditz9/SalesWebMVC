@@ -25,9 +25,9 @@
                 <td>@Html.DisplayFor( x => dpm.Id)</td>
                 <td>@Html.DisplayFor( x => dpm.Name)</td>
                 <td>
-                    @Html.ActionLink("Edit","Edit", new {/*id=item.PrimaryKey*/})
-                    @Html.ActionLink("Details","Details", new {/*id=item.PrimaryKey*/})
-                    @Html.ActionLink("Delete","Delete", new {/*id=item.PrimaryKey*/})
+                    @Html.ActionLink("Edit","Edit", new { id=dpm.Id })
+                    @Html.ActionLink("Details","Details", new { id=dpm.Id })
+                    @Html.ActionLink("Delete","Delete", new { id=dpm.Id })
                 </td>
             </tr>
         }
