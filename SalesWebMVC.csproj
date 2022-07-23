@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\SWContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Data\SalesWeb_DB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

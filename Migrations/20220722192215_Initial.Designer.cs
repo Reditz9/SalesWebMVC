@@ -9,8 +9,8 @@ using SalesWebMVC.Data;
 
 namespace SalesWebMVC.Migrations
 {
-    [DbContext(typeof(SWContext))]
-    [Migration("20220722192215_Initial")]
+    [DbContext(typeof(SalesWebContext))]
+    [Migration("20220725205118_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace SalesWebMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Department");
+                    b.ToTable("Departments");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,13 +5,13 @@ namespace SalesWebMVC
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args )
         {
             var builder = WebApplication.CreateBuilder(args);
 
             //Database Connection
-            builder.Services.AddDbContext<SWContext>(options =>
-                options.UseSqlite(builder.Configuration.GetConnectionString("SWContext") 
+            builder.Services.AddDbContext<SalesWebContext>(options =>
+                options.UseSqlite(builder.Configuration.GetConnectionString("SalesWebContext") 
                 ?? throw new InvalidOperationException("Connection string 'SWContext' not found.")));
 
             // Add services to the container.
