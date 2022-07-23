@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SalesWebMVC.Data;
+
 namespace SalesWebMVC
 {
     public class Program
@@ -5,6 +8,11 @@ namespace SalesWebMVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            //Database Connection
+            builder.Services.AddDbContext<SWContext>(options =>
+                options.UseSqlite(builder.Configuration.GetConnectionString("SWContext") 
+                ?? throw new InvalidOperationException("Connection string 'SWContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
