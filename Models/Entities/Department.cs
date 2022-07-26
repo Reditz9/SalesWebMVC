@@ -2,7 +2,7 @@
 using Microsoft.Build.Framework;
 using SalesWebMVC.Models.Entities;
 
-namespace SalesWebMVC.Models
+namespace SalesWebMVC.Models.Entities
 {
     public class Department
     {
