@@ -2,10 +2,13 @@
 
 @{
     ViewData["Title"] = "Sellers";
+    ViewData["Create"] = "Seller";
 }
 
 <h2>@ViewData["Title"]</h2>
-<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New @ViewData["Create"]</a>
+</p>
 <table class="table">
     <thead>
         <tr class="table-dark">

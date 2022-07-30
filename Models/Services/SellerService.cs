@@ -18,6 +18,20 @@ namespace SalesWebMVC.Models.Services
         {
             return _context.Sellers.ToList();
         }
-
+        public Seller Find(int? id)
+        {
+            return _context.Sellers.FirstOrDefault(s => s.Id == id);
+        }
+        public void Insert(Seller newSeller)
+        {
+            _context.Sellers.Add(newSeller);
+            _context.SaveChanges();
+        }
+        public void Remove(int? Id)
+        {
+            var seller = _context.Sellers.Find(Id);
+            _context.Sellers.Remove(seller);
+            _context.SaveChanges();
+        }
     }
 }
