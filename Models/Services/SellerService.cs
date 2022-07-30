@@ -20,10 +20,11 @@ namespace SalesWebMVC.Models.Services
         }
         public Seller Find(int? id)
         {
-            return _context.Sellers.FirstOrDefault(s => s.Id == id);
+            return _context.Sellers.Find(id);
         }
         public void Insert(Seller newSeller)
         {
+            newSeller.Department = _context.Departments.Find(2);
             _context.Sellers.Add(newSeller);
             _context.SaveChanges();
         }
