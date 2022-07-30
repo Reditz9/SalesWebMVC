@@ -24,7 +24,6 @@ namespace SalesWebMVC.Models.Services
         }
         public void Insert(Seller newSeller)
         {
-            newSeller.Department = _context.Departments.Find(2);
             _context.Sellers.Add(newSeller);
             _context.SaveChanges();
         }
