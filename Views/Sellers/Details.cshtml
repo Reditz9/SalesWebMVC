@@ -1,0 +1,30 @@
+﻿@model SalesWebMVC.Models.Entities.Seller;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Sellers Details</h2>
+<hr />
+<div class="flex">
+
+    <dl class="row">
+        <dt class="col-2 ">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd class="col-10">@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(model => model.BirthDate)</dt>
+        <dd class="col-10">@Html.DisplayFor(model => model.BirthDate)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(model => model.BaseSalary)</dt>
+        <dd class="col-10">@Html.DisplayFor(model => model.BaseSalary)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(model => model.DepartmentId)</dt>
+        <dd class="col-10">@Html.DisplayFor(model => model.DepartmentId)</dd>
+    </dl>
+    <button class="btn btn-primary">Edit</button>
+    <a class="ms-4" asp-action="Index">Back to List</a>
+</div>
+

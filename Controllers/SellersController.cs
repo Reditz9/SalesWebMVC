@@ -18,23 +18,45 @@ namespace SalesWebMVC.Controllers
             _departmentService = departmentService;
         }
 
-        public  IActionResult Index()
+        public IActionResult Index()
         {
-            var sellersList =  _sellerService.FindAll();
+            var sellersList = _sellerService.FindAll();
             return View(sellersList);
         }
-        //GET 
+        //GET
         [HttpGet]
-        public IActionResult Create(int? id)
-        { 
+        public IActionResult Create()
+        {
             var departments = _departmentService.FindAll();
-            var viewModel = new SellerFormViewModel { Departments=departments};
+            var viewModel = new SellerFormViewModel { Departments = departments };
             return View(viewModel);
         }
         [HttpGet]
         public IActionResult Delete(int? id)
         {
-            var seller = _sellerService.Find(id);
+            if(id is null)
+            {
+                return NotFound();
+            }
+            var seller = _sellerService.FindById(id.Value);
+            if(seller is null)
+            {
+                return NotFound();
+            }
+            return View(seller);
+        }
+        [HttpGet]
+        public IActionResult Details(int? id)
+        {
+            if(id is null)
+            {
+                return NotFound();
+            }
+            var seller = _sellerService.FindById(id.Value);
+            if(seller is null)
+            {
+                return NotFound();
+            }
             return View(seller);
         }
         //POST

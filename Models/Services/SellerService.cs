@@ -18,7 +18,7 @@ namespace SalesWebMVC.Models.Services
         {
             return _context.Sellers.ToList();
         }
-        public Seller Find(int? id)
+        public Seller FindById(int? id)
         {
             return _context.Sellers.Find(id);
         }
